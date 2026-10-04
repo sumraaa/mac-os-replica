@@ -74,7 +74,7 @@ export default function Dock() {
     const handleTrashUpdated = (e) => {
       setHasTrashedItems(e.detail.hasFiles);
     };
-    
+
     // Also listen to Finder deleting file directly (as back up / instant refresh)
     const handleFileTrashed = () => {
       setHasTrashedItems(true);
@@ -140,10 +140,10 @@ export default function Dock() {
       comp: <Mail />,
     },
     {
-       id: "Maps",
-       label: "Maps",
-       icon: "https://s3-new.macosicons.com/macosicons/parse/low_res_Maps_macOS_Golden_Gate_jOxvDFgSHw-b6ceac8cd4.png",
-       comp: <Maps />,
+      id: "Maps",
+      label: "Maps",
+      icon: "https://s3-new.macosicons.com/macosicons/parse/low_res_Maps_macOS_Golden_Gate_jOxvDFgSHw-b6ceac8cd4.png",
+      comp: <Maps />,
     },
     {
       id: "Photos",
@@ -197,37 +197,37 @@ export default function Dock() {
       id: "Podcasts",
       label: "Podcasts",
       icon: "https://s3-new.macosicons.com/macosicons/parse/low_res_Podcasts_macOS_Golden_Gate_PLHwgdc3Fl-4abdcae811.png",
-      action: () => {},
+      action: () => { },
     },
     {
       id: "TV",
       label: "TV",
       icon: "https://s3-new.macosicons.com/macosicons/parse/low_res_TV_macOS_Golden_Gate_j8weRAj4mw-f0424494f0.png",
-      action: () => {},
+      action: () => { },
     },
     {
       id: "AppStore",
       label: "App Store",
       icon: "https://s3-new.macosicons.com/macosicons/parse/App_Store__MacOS_Tahoe__ZTpqalXxE3_lowResPng-b755fc1237.png",
-      action: () => {},
+      action: () => { },
     },
     {
       id: "Pages",
       label: "Pages",
       icon: "https://s3-new.macosicons.com/macosicons/parse/Pages__Apple_Creative_Studio__hHeqYyTXZ3_lowResPng-7a5fbcd210.png",
-      action: () => {},
+      action: () => { },
     },
     {
       id: "Numbers",
       label: "Numbers",
       icon: "https://s3-new.macosicons.com/macosicons/parse/Numbers__Apple_Creative_Studio__pfooNXbNnX_lowResPng-665922f586.png",
-      action: () => {},
+      action: () => { },
     },
     {
       id: "Keynote",
       label: "Keynote",
       icon: "https://s3-new.macosicons.com/macosicons/parse/Keynote__Apple_Creative_Studio__SlTcHVkQP5_lowResPng-aac0878b95.png",
-      action: () => {},
+      action: () => { },
     },
     {
       id: "Settings",
@@ -240,20 +240,20 @@ export default function Dock() {
       id: "Github",
       label: "GitHub",
       icon: "https://s3-new.macosicons.com/macosicons/parse/GitHub_mm0mJOQEAS_lowResPng-6e5b90d2c7.png",
-      url: "https://github.com/LikhithSP",
+      url: "https://github.com/sumraaa",
     },
     {
       id: "linkedin",
       label: "LinkedIn",
       icon: "https://s3-new.macosicons.com/macosicons/parse/LinkedIn_ZcwY6Altec_lowResPng-59b3305d8f.png",
-      url: "https://www.linkedin.com/in/likhithsp/",
+      url: "https://www.linkedin.com/in/mr-sumanth-940424321/",
     },
     { divider: true },
     {
       id: "Folder",
       label: "Folder",
       icon: "https://s3-new.macosicons.com/macosicons/parse/MacOS_Default_Folder_icon_GecwaBmkFQ_lowResPng-6d37abc4ac.png",
-      action: () => {},
+      action: () => { },
     },
     {
       id: "Trash",
@@ -272,7 +272,7 @@ export default function Dock() {
     }
     return windows.some((w) => w.appId === appId);
   };
-  
+
   // Check if an app is minimized
   const isAppMinimized = (appId) => windows.some((w) => w.appId === appId && w.minimized);
 
@@ -405,7 +405,7 @@ export default function Dock() {
                             <span className="absolute bottom-1 right-1 text-[8px] bg-yellow-500/80 text-black px-1 rounded font-semibold scale-90">min</span>
                           )}
                         </div>
-                        
+
                         {/* Title */}
                         <span className="text-[10px] font-medium text-center truncate w-full text-gray-300 group-hover/preview:text-white px-0.5">
                           {title}
@@ -447,7 +447,7 @@ export default function Dock() {
                 </div>
               )
             )}
-            
+
             <div
               className="
                 rounded-xl
@@ -468,10 +468,10 @@ export default function Dock() {
                 draggable={false}
               />
             </div>
-            
+
             {/* Dot indicator for open apps */}
             {isAppOpen(app.id) && (
-              <div 
+              <div
                 className="absolute -bottom-0.5 w-1 h-1 bg-white/90 rounded-full"
                 style={{
                   boxShadow: "0 0 4px rgba(255,255,255,0.6)"

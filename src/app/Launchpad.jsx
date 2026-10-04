@@ -31,7 +31,7 @@ const TrafficLights = ({ windowId }) => {
         title="Close"
       >
         <svg className="w-1.5 h-1.5 text-[#820005] opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 10 10">
-          <path d="M1 1L9 9M9 1L1 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M1 1L9 9M9 1L1 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       </div>
       <div
@@ -40,7 +40,7 @@ const TrafficLights = ({ windowId }) => {
         title="Minimize"
       >
         <svg className="w-1.5 h-1.5 text-[#9a6400] opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 10 10">
-          <path d="M1 5H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M1 5H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       </div>
       <div
@@ -51,13 +51,13 @@ const TrafficLights = ({ windowId }) => {
         <svg className="w-1.5 h-1.5 text-[#006500] opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 10 10">
           {maximized ? (
             <>
-              <rect x="1.5" y="3.5" width="5" height="5" fill="none" stroke="currentColor" strokeWidth="1.2"/>
-              <path d="M3.5 3.5V1.5H8.5V6.5H6.5" fill="none" stroke="currentColor" strokeWidth="1.2"/>
+              <rect x="1.5" y="3.5" width="5" height="5" fill="none" stroke="currentColor" strokeWidth="1.2" />
+              <path d="M3.5 3.5V1.5H8.5V6.5H6.5" fill="none" stroke="currentColor" strokeWidth="1.2" />
             </>
           ) : (
             <>
-              <path d="M1 1L4 4M1 1V3.5M1 1H3.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-              <path d="M9 9L6 6M9 9V6.5M9 9H6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+              <path d="M1 1L4 4M1 1V3.5M1 1H3.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+              <path d="M9 9L6 6M9 9V6.5M9 9H6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
             </>
           )}
         </svg>
@@ -221,7 +221,7 @@ export default function Launchpad({ windowId }) {
       appId: "Github",
       label: "GitHub",
       icon: "https://s3-new.macosicons.com/macosicons/parse/GitHub_mm0mJOQEAS_lowResPng-6e5b90d2c7.png",
-      url: "https://github.com/LikhithSP",
+      url: "https://github.com/sumraaa",
     },
     {
       appId: "linkedin",
@@ -273,7 +273,7 @@ export default function Launchpad({ windowId }) {
   ];
 
   return (
-    <div 
+    <div
       className="flex flex-col h-full w-full select-none text-[13px]"
       style={{
         fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif"
@@ -284,34 +284,33 @@ export default function Launchpad({ windowId }) {
         <div className="flex items-center gap-3">
           <TrafficLights windowId={windowId} />
           <div className="flex items-center gap-2">
-            <img 
+            <img
               src="https://s3-new.macosicons.com/macosicons/parse/App_Store__MacOS_Tahoe__ZTpqalXxE3_lowResPng-b755fc1237.png"
-              alt="App Store icon" 
+              alt="App Store icon"
               className="w-5 h-5 object-contain"
             />
             <span className={`font-semibold text-[15px] ${isDarkMode ? "text-white/90" : "text-gray-900/90"}`}>Apps</span>
           </div>
         </div>
-        
-        <button className={`flex items-center gap-1.5 px-2 py-1 rounded-lg border transition ${
-          isDarkMode 
-            ? "border-white/10 bg-white/5 hover:bg-white/10 text-white/80" 
-            : "border-black/10 bg-black/5 hover:bg-black/10 text-gray-800"
-        }`}>
+
+        <button className={`flex items-center gap-1.5 px-2 py-1 rounded-lg border transition ${isDarkMode
+          ? "border-white/10 bg-white/5 hover:bg-white/10 text-white/80"
+          : "border-black/10 bg-black/5 hover:bg-black/10 text-gray-800"
+          }`}>
           <LayoutGrid size={14} />
           <ChevronDown size={12} />
         </button>
       </header>
 
       {/* Main categories scrollable list */}
-      <div 
+      <div
         className="flex-1 overflow-y-auto px-6 py-4 space-y-6 notes-no-scrollbar"
         style={{ scrollbarWidth: "none" }}
       >
         {categories.map((cat) => {
           const isExpanded = expandedSections[cat.id];
           const displayApps = isExpanded ? cat.apps : cat.apps.slice(0, 5);
-          
+
           return (
             <div key={cat.id} className="space-y-3">
               <div className="flex items-center justify-between">
@@ -319,7 +318,7 @@ export default function Launchpad({ windowId }) {
                   {cat.title}
                 </span>
                 {cat.apps.length > 5 && (
-                  <button 
+                  <button
                     onClick={() => toggleSection(cat.id)}
                     className="text-blue-500 hover:text-blue-600 text-[12px] font-medium transition"
                   >
@@ -327,25 +326,24 @@ export default function Launchpad({ windowId }) {
                   </button>
                 )}
               </div>
-              
+
               <div className="grid grid-cols-5 gap-y-5 justify-items-center">
                 {displayApps.map((app) => (
-                  <div 
-                    key={app.appId} 
+                  <div
+                    key={app.appId}
                     onClick={() => handleLaunch(app)}
                     className="flex flex-col items-center gap-1.5 cursor-pointer group text-center"
                   >
                     <div className="relative w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.15)]">
-                      <img 
-                        src={app.icon} 
-                        alt={app.label} 
+                      <img
+                        src={app.icon}
+                        alt={app.label}
                         className="w-full h-full object-cover rounded-xl"
                         draggable={false}
                       />
                     </div>
-                    <span className={`text-[11px] font-medium truncate max-w-full leading-tight transition ${
-                      isDarkMode ? "text-white/80 group-hover:text-white" : "text-gray-800 group-hover:text-black"
-                    }`}>
+                    <span className={`text-[11px] font-medium truncate max-w-full leading-tight transition ${isDarkMode ? "text-white/80 group-hover:text-white" : "text-gray-800 group-hover:text-black"
+                      }`}>
                       {app.label}
                     </span>
                   </div>
